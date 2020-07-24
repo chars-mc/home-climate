@@ -1,0 +1,82 @@
+* {
+   -fx-font-family: "Roboto";
+   -fx-text-fill: #ffffff;
+   -fx-background-radius: 0;
+}
+
+.ventana {
+   -fx-background: #000000;
+}
+.logo {
+    -fx-padding: 20px 0 75px 20px;
+    -fx-text-fill: #f44336;
+    -fx-font-weight: bold;
+    -fx-font-size: 30px;
+}
+.principal {
+    -fx-background-color: #000000;
+    -fx-padding: 30px;
+    -fx-font-size: 24px;
+}
+.titulo {
+    -fx-text-fill: #e1f5fe;
+    -fx-font-weight: bold;
+    -fx-font-size: 30px;
+    -fx-padding: 20px 0;
+}
+
+.menu {
+   -fx-background-color: #212121;
+   -fx-alignment: center;
+   -fx-padding: 0;
+   -fx-font-size: 24px;
+}
+.menuBoton {
+    -fx-background-color: transparent;
+    -fx-padding: 20px;
+    -fx-alignment: BOTTOM_LEFT;
+}
+.menuBoton:hover {
+    -fx-background-color: #000000;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.cajaDato {
+    -fx-padding: 25px;
+    -fx-background-color: #212121;
+}
+
+.sensorValor {
+    -fx-font-weight: bold;
+    -fx-text-fill: #80deea;
+    -fx-font-size: 45px;
+    -fx-padding: 10px 0;
+}
+
+.sensorValorBajo {
+    -fx-padding: 0 15px 0 0;
+    -fx-text-fill: #689f38;
+    -fx-font-size: 20px;
+}
+.sensorValorAlto {
+    -fx-text-fill: #bf360c;
+    -fx-font-size: 20px;
+}
+.texto {
+    -fx-font-size: 13px;
+}
+
+.icono {
+    -fx-font-size: 50px;
+    -fx-text-fill: white;
+}
+
+.boton {
+    -fx-background-color: transparent;
+}
+
+.table-view:row-selection .table-row-cell:filled:hover { 
+    -fx-background-color: #212121;
+    -fx-text-fill: #ffffff;
+}

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="768.0" minWidth="1366.0" prefHeight="400.0" prefWidth="600.0" styleClass="ventana" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyecto.FXMLDocumentController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="menu" GridPane.columnSpan="2" GridPane.rowSpan="6">
+         <children>
+            <Button fx:id="inicioBoton" mnemonicParsing="false" onAction="#inicio" prefWidth="228.0" styleClass="menuBoton" text="⌂ Inicio" />
+            <Button fx:id="graficasBoton" mnemonicParsing="false" onAction="#graficos" prefWidth="228.0" styleClass="menuBoton" text="↯ Graficas" />
+            <Button fx:id="reportesBoton" mnemonicParsing="false" onAction="#reportes" prefWidth="228.0" styleClass="menuBoton" text="≡ Reportes" />
+            <Button fx:id="salirBoton" mnemonicParsing="false" onAction="#salir" prefWidth="228.0" styleClass="menuBoton" text="⮌ Salir" />
+         </children>
+      </VBox>
+      <VBox fx:id="principal" prefHeight="200.0" prefWidth="100.0" styleClass="principal" GridPane.columnIndex="2" GridPane.columnSpan="10" GridPane.rowSpan="6">
+         <children>
+            <VBox fx:id="sensores" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label styleClass="titulo" text="Datos" />
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="216.0" prefWidth="280.0" styleClass="cajaDato">
+                           <children>
+                              <Label text="Humedad" />
+                              <Label fx:id="humedadLabel" styleClass="sensorValor" text="\%" />
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="humedadValorBajo" styleClass="sensorValorBajo" text="\%" />
+                                    <Label fx:id="humedadValorAlto" styleClass="sensorValorAlto" text="\%" />
+                                 </children>
+                              </HBox>
+                              <Label styleClass="texto" text="valor más bajo / Valor más alto" />
+                           </children>
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="216.0" prefWidth="280.0" styleClass="cajaDato">
+                           <children>
+                              <Label text="Temperatura" />
+                              <Label fx:id="temperaturaLabel" styleClass="sensorValor" text="°C" />
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="temperaturaValorBajo" styleClass="sensorValorBajo" text="\%" />
+                                    <Label fx:id="temperaturaValorAlto" styleClass="sensorValorAlto" text="\%" />
+                                 </children>
+                              </HBox>
+                              <Label styleClass="texto" text="valor más bajo / Valor más alto" />
+                           </children>
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox layoutX="270.0" layoutY="10.0" prefHeight="216.0" prefWidth="280.0" styleClass="cajaDato">
+                           <children>
+                              <Label text="Índice de calor" />
+                              <Label fx:id="indiceCalorLabel" styleClass="sensorValor" text="°C" />
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="indiceCalorValorBajo" styleClass="sensorValorBajo" text="°C" />
+                                    <Label fx:id="indiceCalorValorAlto" styleClass="sensorValorAlto" text="°C" />
+                                 </children>
+                              </HBox>
+                              <Label styleClass="texto" text="valor más bajo / Valor más alto" />
+                           </children>
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox layoutX="530.0" layoutY="10.0" prefHeight="216.0" prefWidth="280.0" styleClass="cajaDato">
+                           <children>
+                              <Label text="Humedad Tierra" />
+                              <Label fx:id="humedadTierraLabel" styleClass="sensorValor" text="\%" />
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="humedadTierraValorBajo" styleClass="sensorValorBajo" text="\%" />
+                                    <Label fx:id="humedadTierraValorAlto" styleClass="sensorValorAlto" text="\%" />
+                                 </children>
+                              </HBox>
+                              <Label styleClass="texto" text="valor más bajo / Valor más alto" />
+                           </children>
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="graficas" minHeight="296.0" prefHeight="296.0" prefWidth="1078.0">
+               <children>
+                  <Label fx:id="graficaTitulo" styleClass="titulo" text="Graficas" />
+                  <LineChart fx:id="grafica" minHeight="500.0" prefHeight="104.0" prefWidth="1078.0">
+                    <xAxis>
+                      <CategoryAxis fx:id="categoryX" prefHeight="45.0" prefWidth="1005.0" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="numberY" side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="humedadGraficaBoton" mnemonicParsing="false" onAction="#graficaHumedad" styleClass="menuBoton" text="Humedad">
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="temperaturaGraficaBoton" mnemonicParsing="false" onAction="#temperaturaGrafica" styleClass="menuBoton" text="Temperatura">
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="indiceCalorGraficaBoton" mnemonicParsing="false" onAction="#indiceCalorGrafica" styleClass="menuBoton" text="Índice de calor">
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="humedadTierraGraficaBoton" mnemonicParsing="false" onAction="#humedadTierraGrafica" styleClass="menuBoton" text="Humedad Tierra">
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="reportes" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label styleClass="titulo" text="Reporte" />
+                  <TableView fx:id="tablaReporte" minHeight="500.0" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="fecha" prefWidth="341.0" text="Fecha" />
+                      <TableColumn fx:id="valorMinimo" prefWidth="213.0" text="Valor mínimo" />
+                        <TableColumn fx:id="promedio" prefWidth="224.0" text="Promedio" />
+                        <TableColumn fx:id="valorMáximo" prefWidth="299.0" text="Valor máximo" />
+                    </columns>
+                     <styleClass>
+                        <String fx:value="table-cell" />
+                        <String fx:value="table-row-cell" />
+                     </styleClass>
+                  </TableView>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="humedadReporteBoton" mnemonicParsing="false" onAction="#reporteHumedad" styleClass="menuBoton" text="Humedad">
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="temperaturaReporteBoton" mnemonicParsing="false" onAction="#temperaturaReporte" styleClass="menuBoton" text="Temperatura">
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="indiceCalorReporteBoton" mnemonicParsing="false" onAction="#indiceCalorReporte" styleClass="menuBoton" text="Índice de calor">
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="humedadTierraReporteBoton" mnemonicParsing="false" onAction="#humedadTierraReporte" styleClass="menuBoton" text="Humedad Tierra">
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</GridPane>
