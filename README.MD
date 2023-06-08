@@ -1,4 +1,4 @@
-# HOME AUTOMATION WITH ARDUINO
+# HOME CLIMATE WITH ARDUINO
 The application consists of displaying data obtained from sensors connected to an arduino.
 
 ## Sensors and modules
