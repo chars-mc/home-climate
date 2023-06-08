@@ -1,5 +1,5 @@
 # HOME CLIMATE WITH ARDUINO
-The application consists of displaying data obtained from sensors connected to an arduino.
+Internet of things project to control the climate and lights in a house.
 
 ## Sensors and modules
 * Arduino Mega 2560
